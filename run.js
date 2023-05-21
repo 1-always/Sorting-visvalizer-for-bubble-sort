@@ -1,11 +1,16 @@
 const n=20;
-const arr=[];
+var arr=[];
 init();
+
 function init() {
-for( let i=0; i<n; i++ )
-{
-arr[i]=Math.random();
-}
+    
+const numbersInput = document.getElementById("array").value;
+const numbersArray = numbersInput.split(" ").map(number => number.trim());
+const array = numbersArray.map(number => Number(number));
+arr1=[...array]
+arr=arr1.splice(arr.length-1);
+console.log(arr);
+
 //bubbleSort(arr);
 showBars();
 }
@@ -73,7 +78,7 @@ container.innerHTML="";
 for(let i=0; i<arr.length; i++ )
 {   
 const bar=document.createElement("div");
-bar.style.height=arr[i]*100+"%";
+bar.style.height=(arr[i]*5)+"%";
 //bar.style.width="20px";
 //bar.style.backgroundColor="#000080";
 bar.classList.add("bar");
